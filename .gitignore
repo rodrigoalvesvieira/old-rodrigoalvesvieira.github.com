@@ -1,0 +1,12 @@
+.sass-cache
+.DS_Store
+_site
+.bundle
+log/*.log
+tmp/**/*
+.rvmrc
+config/database.yml
+public/uploads/**
+*.tmproj
+*.swp
+*.swo
