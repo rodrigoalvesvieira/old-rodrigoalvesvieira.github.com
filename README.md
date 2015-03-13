@@ -1,4 +1,4 @@
-# The Blog of Rodrigo Alves
+# [The Blog] of Rodrigo Alves
 
 On which I write about Software Development, Computer Science and mostly iOS & Swift development.
 
@@ -19,3 +19,5 @@ $ jekyll serve             # Starts the local server on port 4000
 ## Copyright
 
 © Rodrigo Alves. All Rights Reserved
+
+[The Blog]: http://rodrigoalvesvieira.github.io

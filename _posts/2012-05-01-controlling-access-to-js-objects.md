@@ -38,9 +38,9 @@ By default, all objects in JavaScript are fully modifiable. We can add, alter an
 
 {% highlight javascript %}
 
-  user.name = 1;
+user.name = 1;
 
-  user.name; // 1, name was set to 1
+user.name; // 1, name was set to 1
 
 {% endhighlight %}
 
@@ -51,9 +51,7 @@ You can specify the access to the object's attributes individually, using the st
 // Disabling updates to the username
 // property of the user object
 
-Object.defineProperty(user,
-    "username", {writable: false}
-)
+Object.defineProperty(user, "username", {writable: false})
 
 user.propertyIsEnumerable("username");
 
@@ -148,4 +146,5 @@ Finally, you can also lock the object entirely, preventing any further change to
 That's it for today, I hope this post was clear enough. I plan to go on writing about JavaScript. Leave your comments!
 
 [See the topic] for this article on Hacker News
+
 [See the topic]: https://news.ycombinator.com/item?id=4823884
