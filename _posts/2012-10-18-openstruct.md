@@ -19,7 +19,7 @@ The [Ruby Quicktips] blog has another good example on how we can use it for app 
 
 Jake Scruggs [has also] made a point about using `OpenStruct` for mocking.
 
-I believe this class is more for rapid prototyping purposes. <span class="small_code">OpenStruct</span> is [demonstrably slower] than <span class="small_code">Struct</span> and probably not very reliable to go for production code.
+I believe this class is more for rapid prototyping purposes. `OpenStruct` is [demonstrably slower] than `Struct` and probably not very reliable to go for production code.
 
 More bad news about it is that it is not as extensible as `Struct`. There is no way for adding methods to it as it relies solely of the `OpenStruct` class itself.
 

@@ -5,7 +5,7 @@ date:   2012-05-01 01:10:38
 categories: travel
 ---
 
-<span class="drops">J</span>avaScript objects are awesome for dealing with data into the language, parsing JSON, quick prototyping and creating your own objects that behave like a datatype on their own. When the case is the last one, you may want to define in your objects properties that may not be changed, or you may want to lock that object in order to prevent any further addition to it, etc. As any good Object Oriented programming language, JavaScript (since ECMAScript 5) defines methods for specifying object visibility.
+JavaScript objects are awesome for dealing with data into the language, parsing JSON, quick prototyping and creating your own objects that behave like a datatype on their own. When the case is the last one, you may want to define in your objects properties that may not be changed, or you may want to lock that object in order to prevent any further addition to it, etc. As any good Object Oriented programming language, JavaScript (since ECMAScript 5) defines methods for specifying object visibility.
 
 Let's start by creating a sample, ordinary JS object to be used throughout this post:
 
@@ -24,7 +24,7 @@ var user = new User(
 
 {% endhighlight %}
 
-All objects in JavaScript have an inner object containing the properties which characterize the access to it. These properties are <span class="small_code">enumerable</span>, <span class="small_code">configurable</span> and <span class="small_code">writable</span>.
+All objects in JavaScript have an inner object containing the properties which characterize the access to it. These properties are `enumerable`, `configurable` and `writable`.
 
 Now have a glance at the following snippet:
 
@@ -44,7 +44,7 @@ By default, all objects in JavaScript are fully modifiable. We can add, alter an
 
 {% endhighlight %}
 
-You can specify the access to the object's attributes individually, using the static <span class="small_code">Object.defineProperty</span> method:
+You can specify the access to the object's attributes individually, using the static `Object.defineProperty` method:
 
 {% highlight javascript %}
 
@@ -59,7 +59,7 @@ user.propertyIsEnumerable("username");
 
 {% endhighlight %}
 
-Similarly, you can define settings for several attributes at once using the <span class="small_code">Object.defineProperties</span> method, passing the given object as first argument, and a the set of attributes as second:
+Similarly, you can define settings for several attributes at once using the `Object.defineProperties` method, passing the given object as first argument, and a the set of attributes as second:
 
 {% highlight javascript %}
 
@@ -81,13 +81,13 @@ In OO, we're used to create objects that have a given behavior, and we further c
 
 All object properties access definitions are persistent across that object prototypes. It means that if object Apartment is prototype of object House, and the latter has a protected maxAvailableSize property, that property won't be alterable from the Apartment object.
 
-Be aware that none of these methods operate on inherited properties. They're all based on the <span class="small_code">hasOwnProperty()</span> method, for security - or sanity - reasons.
+Be aware that none of these methods operate on inherited properties. They're all based on the `hasOwnProperty()` method, for security - or sanity - reasons.
 
 You may observed that, till now, we've been only controlling access to specific attributes of our objects, but what if we really want to lock them up?
 
-## Meet <span class="small_code">preventExtensions()</span>
+## Meet `preventExtensions()`
 
-<span class="small_code">Object.preventExtensions()</span> does exactly what its name suggests: it locks an object so it becomes impossible to add new properties to it:
+`Object.preventExtensions()` does exactly what its name suggests: it locks an object so it becomes impossible to add new properties to it:
 
 {% highlight javascript %}
 
@@ -99,7 +99,7 @@ user.bio // undefined
 
 {% endhighlight %}
 
-NOTE: if you're adding a new property to an object, you may - in our code - be relying upon that property. If the object is locked for extensions, you'd be badly surprised! The  <span class="small_code">Object.preventExtensions()</span> method reveals whether a given object may be extended or not:
+NOTE: if you're adding a new property to an object, you may - in our code - be relying upon that property. If the object is locked for extensions, you'd be badly surprised! The `Object.preventExtensions()` method reveals whether a given object may be extended or not:
 
 {% highlight javascript %}
 
@@ -109,9 +109,9 @@ Object.isExtensible(user); // false
 {% endhighlight %}
 
 
-## Meet <span class="small_code">seal()</span>
+## Meet `seal()`
 
-You may want to create a class, an object and prevent any deletion and/or addition of properties, there is the static <span class="small_code">seal()</span> for that:
+You may want to create a class, an object and prevent any deletion and/or addition of properties, there is the static `seal()` for that:
 
 {% highlight javascript %}
 
@@ -139,14 +139,13 @@ prius.seats // undefined
 
 {% endhighlight %}
 
-You may have already observed that all unsuccessful assignments fail silently. No JS exception is thrown at you. In the sealing case, you can use <span class="small_code">Object.isSealed()</span> to find out if the object is sealed.
+You may have already observed that all unsuccessful assignments fail silently. No JS exception is thrown at you. In the sealing case, you can use `Object.isSealed()` to find out if the object is sealed.
 
-## Meet <span class="small_code">freeze()</span>
+## Meet `freeze()`
 
-Finally, you can also lock the object entirely, preventing any further change to it, using <span class="small_code">Object.freeze()</span> and <span class="small_code">Object.isFrozen()</span> for checking if an object is frozen.
+Finally, you can also lock the object entirely, preventing any further change to it, using `Object.freeze()` and `Object.isFrozen()` for checking if an object is frozen.
 
 That's it for today, I hope this post was clear enough. I plan to go on writing about JavaScript. Leave your comments!
 
 [See the topic] for this article on Hacker News
-
 [See the topic]: https://news.ycombinator.com/item?id=4823884
